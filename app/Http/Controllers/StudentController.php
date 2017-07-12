@@ -279,6 +279,7 @@ class StudentController extends Controller{
 
         var_dump($request->is('student/*'));
         echo $request->url();
+        
 
     }
 
