@@ -106,3 +106,6 @@ Route::get('student/orm1', 'StudentController@orm1');
 Route::get('student/orm2', 'StudentController@orm2');
 Route::get('student/orm3', 'StudentController@orm3');
 Route::get('student/orm4', 'StudentController@orm4');
+
+//Route::any('request1', 'StudentController@request1');
+Route::any('student/request1', 'StudentController@request1');

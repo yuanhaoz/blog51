@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Student;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller{
@@ -28,13 +29,13 @@ class StudentController extends Controller{
 //        var_dump($num);
 
         // 查找数据
-//        $students = DB::select('select * from student where id > ?', [1]);
-////        var_dump($students);
-//        dd($students);
+        $students = DB::select('select * from student where id > ?', [1]);
+//        var_dump($students);
+        dd($students);
 
 //        删除数据
-        $num1 = DB::delete('delete from student where id > ?', [1]);
-        var_dump($num1);
+//        $num1 = DB::delete('delete from student where id > ?', [1]);
+//        var_dump($num1);
 
     }
 
@@ -250,6 +251,35 @@ class StudentController extends Controller{
 
         $num = Student::where('id', '>', 1005) -> delete();
         var_dump($num);
+    }
+
+    public function request1(Request $request) {
+
+        // 1. 取值
+//        $name = $request->input('name');
+//        $name = $request->input('age', 'default');
+//        $name = $request->all();
+
+//        if ($request->has('name')){
+//            $name = $request->input('name');
+//            echo $name;
+//        } else {
+//            echo '没有name参数';
+//        }
+
+        // 2. 判断请求类型
+//        echo $request->method();
+
+//        if ($request->isMethod('Get')){
+//            echo 'yes';
+//        } else {
+//            echo 'no';
+//        }
+//        var_dump($request->ajax());
+
+        var_dump($request->is('student/*'));
+        echo $request->url();
+
     }
 
 }
