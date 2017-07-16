@@ -97,15 +97,42 @@ Route::get('member/{id}', 'MemberController@info')
 /**
  * 数据库操作路由
  */
-Route::get('student/test1', 'StudentController@test1');
-Route::get('student/query1', 'StudentController@query1');
-Route::get('student/query2', 'StudentController@query2');
-Route::get('student/query3', 'StudentController@query3');
-Route::get('student/query4', 'StudentController@query4');
-Route::get('student/orm1', 'StudentController@orm1');
-Route::get('student/orm2', 'StudentController@orm2');
-Route::get('student/orm3', 'StudentController@orm3');
-Route::get('student/orm4', 'StudentController@orm4');
+Route::get('student/test1', 'StudentController1@test1');
+Route::get('student/query1', 'StudentController1@query1');
+Route::get('student/query2', 'StudentController1@query2');
+Route::get('student/query3', 'StudentController1@query3');
+Route::get('student/query4', 'StudentController1@query4');
+Route::get('student/orm1', 'StudentController1@orm1');
+Route::get('student/orm2', 'StudentController1@orm2');
+Route::get('student/orm3', 'StudentController1@orm3');
+Route::get('student/orm4', 'StudentController1@orm4');
 
-//Route::any('request1', 'StudentController@request1');
-Route::any('student/request1', 'StudentController@request1');
+//Route::any('request1', 'StudentController1@request1');
+Route::any('student/request1', 'StudentController1@request1');
+
+
+
+Route::any('session1', 'StudentController1@session1');
+Route::any('session2', 'StudentController1@session2');
+
+
+
+Route::any('response', 'StudentController1@response');
+
+
+// 宣传页面
+Route::any('activity0', 'StudentController1@activity0');
+
+// 活动页面
+Route::group(['middleware' => ['activity']], function () {
+    Route::any('activity1', 'StudentController1@activity1');
+    Route::any('activity2', 'StudentController1@activity2');
+});
+
+
+Route::any('student/index', 'StudentController@index');
+Route::any('student/create', 'StudentController@create');
+Route::any('student/save', 'StudentController@save');
+
+
+

@@ -18,8 +18,8 @@ class Student extends Model{
     // 指定id
     protected $primaryKey = 'id';
 
-    // 指定可以新增的字段
-    protected $fillable = ['name', 'age'];
+    // 指定可以新增的字段，可以批量赋值的字段
+    protected $fillable = ['name', 'age', 'sex'];
 
     // 指定不可以新增的字段
     protected $guarded = [];
