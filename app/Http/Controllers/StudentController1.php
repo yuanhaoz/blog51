@@ -381,5 +381,19 @@ class StudentController1 extends Controller{
     }
 
 
+    public function testPath() {
+        $clue_id = '1110';
+        $link = url('collect/testPath2');
+        echo $link;
+        return redirect($link) -> with(['clue_id' => $clue_id]);
+    }
+
+
+    public function testPath2(Request $request) {
+        echo 'test';
+        dd($request);
+    }
+
+
 
 }
