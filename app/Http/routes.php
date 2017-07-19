@@ -135,4 +135,11 @@ Route::any('student/create', 'StudentController@create');
 Route::any('student/save', 'StudentController@save');
 
 
+Route::group(['prefix' => 'collect'], function () {
+    Route::any('testPath', 'StudentController1@testPath');
+    Route::any('testPath2', 'StudentController1@testPath2');
+});
+
+
+
 
